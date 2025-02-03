@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekplanning Parser</title>
+</head>
+<body>
+
+    <form id="htmlForm">
+        <textarea id="htmlInput" rows="10" cols="50" placeholder="Plak hier je HTML"></textarea>
+        <button type="submit">Parse HTML</button>
+    </form>
+
+    <h3>JSON Output:</h3>
+    <pre id="jsonOutput"></pre>
+
+    <script>
+        document.getElementById("htmlForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const htmlInput = document.getElementById("htmlInput").value;
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlInput, "text/html");
+
+            const jsonOutput = extractWeekData(doc);
+            document.getElementById("jsonOutput").textContent = JSON.stringify(jsonOutput, null, 2);
+        });
+
+        function extractWeekData(doc) {
+            const weeks = [];
+            const weekElements = doc.querySelectorAll(".is-header");
+
+            weekElements.forEach(weekElement => {
+                const dateSpans = weekElement.querySelectorAll("span");
+                const weekNumberSpan = weekElement.querySelector(".is-soft");
+
+                let weekNumber = "";
+                let year = "";
+                if (weekNumberSpan) {
+                    const weekText = weekNumberSpan.textContent.trim();
+                    const matches = weekText.match(/Week (\d+)( (\d{4}))?/);
+                    if (matches) {
+                        weekNumber = matches[1];
+                        year = matches[3] || new Date().getFullYear().toString();
+                    }
+                }
+
+                const startDateStr = dateSpans[0]?.textContent.trim() || "";
+                const endDateStr = dateSpans[1]?.textContent.trim() || "";
+
+                if (!startDateStr || !endDateStr) return; // Geen geldige data
+
+                const startDate = parseDate(startDateStr, year);
+                const endDate = parseDate(endDateStr, year);
+
+                const tasks = extractTasks(doc);
+
+                weeks.push({
+                    weekNumber,
+                    year,
+                    startDate,
+                    endDate,
+                    tasks
+                });
+            });
+
+            return weeks;
+        }
+
+        function parseDate(dateStr, year) {
+            const months = {
+                "januari": 0, "februari": 1, "maart": 2, "april": 3, "mei": 4, "juni": 5,
+                "juli": 6, "augustus": 7, "september": 8, "oktober": 9, "november": 10, "december": 11
+            };
+
+            const dateParts = dateStr.split(" ");
+            if (dateParts.length < 2) return null;
+
+            const day = parseInt(dateParts[0], 10);
+            const month = months[dateParts[1].toLowerCase()];
+            if (isNaN(day) || month === undefined) return null;
+
+            return new Date(year, month, day).toISOString().split("T")[0]; // YYYY-MM-DD
+        }
+
+        function extractTasks(doc) {
+            const taskElements = doc.querySelectorAll(".week-plan");
+            const tasks = [];
+
+            taskElements.forEach(taskElement => {
+                const dayLabel = taskElement.querySelector(".week-plan--title")?.textContent.trim() || "onbekend";
+                const taskSummary = taskElement.querySelector(".task--summary p span")?.textContent.trim() || "";
+                const hours = taskElement.querySelector(".task--summary-meta span")?.textContent.trim() || "0u";
+                const status = taskElement.querySelector(".task--summary-status span")?.textContent.trim() || "Onbekend";
+
+                tasks.push({
+                    day: dayLabel,
+                    summary: taskSummary,
+                    hours,
+                    status
+                });
+            });
+
+            return tasks;
+        }
+    </script>
+
+</body>
+</html>
