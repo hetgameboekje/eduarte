@@ -9,8 +9,8 @@ import locale
 locale.setlocale(locale.LC_TIME, "nl_NL.UTF-8")
 
 # Pad naar het HTML-bestand en tijdelijke JSON-bestand
-html_file_path = 'index.html'
-temp_json_file_path = 'temp.json'
+html_file_path = './index.html'
+temp_json_file_path = './temp.json'
 
 # Functie om uren en minuten om te zetten naar decimale uren
 def parse_time(uren_text):
