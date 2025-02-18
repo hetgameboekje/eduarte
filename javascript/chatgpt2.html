@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML naar JSON Parser</title>
+</head>
+<body>
+    <h1>HTML naar JSON Parser</h1>
+    
+    <textarea id="htmlInput" rows="10" cols="50">
+        <div class='content--part'>
+            <h2 class='is-header'><span>17 - 23 februari</span></h2>
+            <div class='week-plan'>
+                <div class='week-plan--title'>Maandag</div>
+                <div class='task has-popout'>
+                    <p>Voorbeeld taak 1</p>
+                    <div class='task--summary-meta'>
+                        <span>2u 30m</span>
+                    </div>
+                </div>
+            </div>
+            <div class='week-plan'>
+                <div class='week-plan--title'>Dinsdag</div>
+                <div class='task has-popout'>
+                    <p>Voorbeeld taak 2</p>
+                    <div class='task--summary-meta'>
+                        <span>1u 15m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </textarea>
+    
+    <button onclick="parseHTML()">Convert to JSON</button>
+    <pre id="output"></pre>
+
+    <script>
+        function parseHTML() {
+            const inputHTML = document.getElementById("htmlInput").value;
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(inputHTML, "text/html");
+
+            const weekPlans = [];
+            const weekContainers = doc.querySelectorAll(".content--part");
+
+            weekContainers.forEach(container => {
+                const weekHeader = container.querySelector(".is-header span");
+                if (!weekHeader) return;
+
+                const weekText = weekHeader.textContent.trim();
+                const weekData = parseWeekText(weekText);
+                if (!weekData) return;
+
+                let { startDate, year } = weekData;
+
+                const weekPlanElements = container.querySelectorAll(".week-plan");
+                const weekDetails = [];
+
+                weekPlanElements.forEach((weekPlan, index) => {
+                    const dayName = weekPlan.querySelector(".week-plan--title")?.textContent.trim();
+                    const taskElement = weekPlan.querySelector(".task p");
+                    const durationElement = weekPlan.querySelector(".task--summary-meta span");
+
+                    if (!dayName || !taskElement || !durationElement) return;
+
+                    let task = {
+                        date: formatDate(startDate, index), // Bereken datum
+                        day: dayName,
+                        task: taskElement.textContent.trim(),
+                        duration: durationElement.textContent.trim()
+                    };
+
+                    weekDetails.push(task);
+                });
+
+                weekPlans.push({
+                    week: weekText,
+                    year: year,
+                    days: weekDetails
+                });
+            });
+
+            document.getElementById("output").textContent = JSON.stringify(weekPlans, null, 4);
+        }
+
+        function parseWeekText(weekText) {
+            const match = weekText.match(/(\d{1,2})\s*-\s*(\d{1,2})\s*(\w+)/i);
+            if (!match) return null;
+
+            let [, startDay, endDay, monthName] = match;
+            startDay = parseInt(startDay, 10);
+            endDay = parseInt(endDay, 10);
+
+            const monthNames = ["januari", "februari", "maart", "april", "mei", "juni",
+                                "juli", "augustus", "september", "oktober", "november", "december"];
+            const monthIndex = monthNames.indexOf(monthName.toLowerCase());
+
+            if (monthIndex === -1) return null;
+
+            const currentYear = new Date().getFullYear();
+            let year = currentYear;
+
+            // Als de maand januari is en we zitten in december, corrigeer het jaar
+            const currentMonth = new Date().getMonth();
+            if (monthIndex === 0 && currentMonth === 11) {
+                year += 1;
+            }
+
+            const startDate = new Date(year, monthIndex, startDay);
+            return { startDate, year };
+        }
+
+        function formatDate(startDate, dayOffset) {
+            let date = new Date(startDate);
+            date.setDate(startDate.getDate() + dayOffset);
+            return date.toISOString().split("T")[0]; // YYYY-MM-DD
+        }
+    </script>
+</body>
+</html>

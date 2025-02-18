@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML naar JSON Parser</title>
+</head>
+<body>
+    <h1>HTML naar JSON Parser</h1>
+    
+    <textarea id="htmlInput" rows="10" cols="50">
+        <!-- Plak hier jouw HTML -->
+    </textarea>
+    
+    <button onclick="parseHTML()">Convert to JSON</button>
+    <pre id="output"></pre>
+
+    <script>
+        function parseHTML() {
+            const inputHTML = document.getElementById("htmlInput").value;
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(inputHTML, "text/html");
+
+            const weekPlans = [];
+            const weekContainers = doc.querySelectorAll(".content--part");
+
+            weekContainers.forEach(container => {
+                const weekHeader = container.querySelector(".is-header");
+                if (!weekHeader) return;
+
+                // Week informatie ophalen
+                const weekSpans = weekHeader.querySelectorAll("span");
+                const startDay = weekSpans[0]?.textContent.trim();
+                const endDay = weekSpans[1]?.textContent.trim();
+                const year = weekSpans[3]?.textContent.trim();
+
+                if (!startDay || !endDay || !year) return;
+
+                const startDate = parseDate(startDay, year);
+                const endDate = parseDate(endDay, year);
+
+                if (!startDate || !endDate) return;
+
+                const weekPlanElements = container.querySelectorAll(".week-plan");
+                const weekDetails = [];
+
+                weekPlanElements.forEach((weekPlan, index) => {
+                    const dayName = weekPlan.querySelector(".week-plan--title")?.textContent.trim();
+                    const taskElement = weekPlan.querySelector(".task p span");
+                    const durationElement = weekPlan.querySelector(".task--summary-meta span");
+
+                    let taskData = {
+                        date: formatDate(startDate, index), // Bereken datum per dag
+                        day: dayName,
+                        task: taskElement ? taskElement.textContent.trim() : "Geen log op deze dag",
+                        duration: durationElement ? durationElement.textContent.trim() : "0u"
+                    };
+
+                    weekDetails.push(taskData);
+                });
+
+                weekPlans.push({
+                    week: `${startDay} - ${endDay} ${year}`,
+                    year: year,
+                    days: weekDetails
+                });
+            });
+
+            document.getElementById("output").textContent = JSON.stringify(weekPlans, null, 4);
+        }
+
+        function parseDate(dayMonth, year) {
+            const months = {
+                "januari": 0, "februari": 1, "maart": 2, "april": 3, "mei": 4, "juni": 5,
+                "juli": 6, "augustus": 7, "september": 8, "oktober": 9, "november": 10, "december": 11
+            };
+            const parts = dayMonth.split(" ");
+            if (parts.length !== 2) return null;
+
+            const day = parseInt(parts[0], 10);
+            const month = months[parts[1].toLowerCase()];
+            if (isNaN(day) || month === undefined) return null;
+
+            return new Date(year, month, day);
+        }
+
+        function formatDate(startDate, dayOffset) {
+            let date = new Date(startDate);
+            date.setDate(startDate.getDate() + dayOffset);
+            return date.toISOString().split("T")[0]; // YYYY-MM-DD
+        }
+    </script>
+</body>
+</html>

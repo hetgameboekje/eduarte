@@ -1,3 +1,4 @@
+import os
 import json
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -9,10 +10,29 @@ import locale
 locale.setlocale(locale.LC_TIME, "nl_NL.UTF-8")
 
 # Pad naar het HTML-bestand en tijdelijke JSON-bestand
-html_file_path = './index.html'
-temp_json_file_path = './temp.json'
+html_file_path = 'index.html'
+temp_json_file_path = 'temp.json'
 
-# Functie om uren en minuten om te zetten naar decimale uren
+def ensure_html_file_exists():
+    if not os.path.exists(html_file_path):
+        sample_content = """<html><body>
+            <div class='content--part'>
+                <h2 class='is-header'><span>1 januari</span></h2>
+                <div class='week-plan'>
+                    <div class='week-plan--title'>Maandag</div>
+                    <div class='task has-popout'>
+                        <p>Voorbeeld taak</p>
+                        <div class='task--summary-meta'>
+                            <span>2u 30m</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body></html>"""
+        with open(html_file_path, 'w', encoding='utf-8') as f:
+            f.write(sample_content)
+        print(f"Voorbeeldbestand aangemaakt: {html_file_path}")
+
 def parse_time(uren_text):
     uren_match = re.search(r'(\d+)u', uren_text)
     minuten_match = re.search(r'(\d+)m', uren_text)
@@ -20,12 +40,10 @@ def parse_time(uren_text):
     minuten = int(minuten_match.group(1)) if minuten_match else 0
     return uren + (minuten / 60)
 
-# Flexibele functie om de startdatum van de week om te zetten naar individuele datums per dag
 def get_week_dates(start_date_str):
     date_formats = ["%d %B", "%d %b", "%d %B %Y", "%d %b %Y"]
     start_date = None
 
-    # Probeer verschillende datumformaten
     for date_format in date_formats:
         try:
             start_date = datetime.strptime(start_date_str, date_format)
@@ -41,7 +59,6 @@ def get_week_dates(start_date_str):
     week_dates = [(start_date + timedelta(days=i)).strftime("%d-%m-%Y") for i in range(5)]
     return week_dates
 
-# Functie om projecten te laden of toe te voegen
 def load_or_add_project():
     projects = load_projects()
     for key, name in projects.items():
@@ -57,7 +74,6 @@ def load_or_add_project():
         print("Ongeldige keuze, probeer opnieuw.")
         return load_or_add_project()
 
-# Functie om bestaande projecten te laden
 def load_projects():
     try:
         with open('projects.json', 'r', encoding='utf-8') as file:
@@ -65,7 +81,6 @@ def load_projects():
     except FileNotFoundError:
         return {}
 
-# Functie om een nieuw project toe te voegen
 def add_new_project():
     projects = load_projects()
     new_project_name = input("Voer de naam van het nieuwe project in: ")
@@ -76,20 +91,18 @@ def add_new_project():
     print(f"Nieuw project toegevoegd: {new_id} - {new_project_name}")
     return new_project_name
 
-# Functie om HTML in delen te verwerken
 def process_html_in_chunks(html_file_path, chunk_size=1000):
+    ensure_html_file_exists()
+    
     with open(html_file_path, 'r', encoding='utf-8') as file:
         lines = file.readlines()
     
-    data = []  # Lijst om de gegevens in op te slaan
+    data = []
 
-    # Itereer door het HTML-bestand in stukken van 'chunk_size' regels
     for i in range(0, len(lines), chunk_size):
-        # Selecteer een deel van het bestand
         html_chunk = "".join(lines[i:i + chunk_size])
         soup = BeautifulSoup(html_chunk, 'html.parser')
 
-        # Vind alle relevante delen in deze HTML-chunk
         for content_part in soup.find_all(class_='content--part'):
             header = content_part.find('h2', class_='is-header')
             if header:
@@ -98,7 +111,6 @@ def process_html_in_chunks(html_file_path, chunk_size=1000):
                 if week_dates is None:
                     continue
 
-            # Itereer door elke dag in de week
             for j, week_plan in enumerate(content_part.find_all(class_='week-plan')):
                 dag = week_plan.find(class_='week-plan--title').text.strip()
                 task = week_plan.find(class_='task has-popout')
@@ -110,43 +122,47 @@ def process_html_in_chunks(html_file_path, chunk_size=1000):
                     uren_text = uren_element.text.strip() if uren_element else "0u"
                     uren_value = parse_time(uren_text)
 
-                    # Toon informatie aan de gebruiker
                     print(f"\nDatum: {week_dates[j]}, Dag: {dag}")
                     print(f"Uren: {uren_value}, Bericht: {bericht}")
 
-                    # Laat gebruiker een project selecteren
                     project_name = load_or_add_project()
 
-                    # Voeg een categorie en geselecteerd project toe aan de gegevens
                     data.append({
                         "PROJECT": project_name,
-                        "CATEGORY": "",  # Categorie kan later worden toegewezen
+                        "CATEGORY": "",
                         "DAG": dag,
                         "DATUM": week_dates[j],
                         "UREN": uren_value,
                         "BERICHT": bericht
                     })
 
-    # Sla de gegevens op in een tijdelijke JSON-bestand
     with open(temp_json_file_path, 'w', encoding='utf-8') as temp_file:
         json.dump(data, temp_file, indent=4)
     print(f"Tijdelijke data opgeslagen in {temp_json_file_path}")
 
-# Functie om data uit JSON naar Excel te exporteren
+def add_categories_to_json(json_file_path):
+    with open(json_file_path, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    
+    print("\nCategorieën toevoegen:")
+    for entry in data:
+        print(f"\nDatum: {entry['DATUM']} - Bericht: {entry['BERICHT']}")
+        entry['CATEGORY'] = input("Voer categorie in: ")
+    
+    with open(json_file_path, 'w', encoding='utf-8') as file:
+        json.dump(data, file, indent=4)
+    print("\nCategorieën succesvol toegevoegd aan JSON-bestand.")
+
 def export_json_to_excel(json_file_path, excel_filename='Eduarte_Urenregistratie.xlsx'):
     with open(json_file_path, 'r', encoding='utf-8') as temp_file:
         data = json.load(temp_file)
 
-    # Omzetten naar DataFrame
     df = pd.DataFrame(data)
     
-    # Zorg dat de datum zonder tijd wordt weergegeven
     df['DATUM'] = pd.to_datetime(df['DATUM'], format="%d-%m-%Y", errors='coerce').dt.strftime("%d-%m-%Y")
 
-    # Bereken het totale aantal uren
     total_uren = df['UREN'].sum()
 
-    # Voeg een laatste rij toe voor het totaal aantal uren
     total_row = pd.DataFrame({
         'PROJECT': ['Totaal'],
         'CATEGORY': [''],
@@ -157,13 +173,14 @@ def export_json_to_excel(json_file_path, excel_filename='Eduarte_Urenregistratie
     })
     df = pd.concat([df, total_row], ignore_index=True)
 
-    # Opslaan naar Excel
     df.to_excel(excel_filename, index=False)
     print(f"Excel bestand opgeslagen als {excel_filename}")
     print(f"Totaal aantal uren gemaakt: {total_uren}")
 
-# Voer de HTML-verwerking in stukken uit
-process_html_in_chunks(html_file_path)
-
-# Exporteer de tijdelijke JSON naar Excel zodra alle delen zijn verwerkt
-export_json_to_excel(temp_json_file_path)
+if __name__ == "__main__":
+    try:
+        process_html_in_chunks(html_file_path)
+        add_categories_to_json(temp_json_file_path)
+        export_json_to_excel(temp_json_file_path)
+    except Exception as e:
+        print(f"Fout opgetreden: {str(e)}")

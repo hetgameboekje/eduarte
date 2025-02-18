@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML naar JSON Parser</title>
+</head>
+<body>
+    <h1>HTML naar JSON Parser</h1>
+    
+    <textarea id="htmlInput" rows="10" cols="50">
+        <html>
+            <body>
+                <div class='content--part'>
+                    <h2 class='is-header'><span>1 januari</span></h2>
+                    <div class='week-plan'>
+                        <div class='week-plan--title'>Maandag</div>
+                        <div class='task has-popout'>
+                            <p>Voorbeeld taak</p>
+                            <div class='task--summary-meta'>
+                                <span>2u 30m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </body>
+        </html>
+    </textarea>
+    
+    <button onclick="parseHTML()">Parse HTML</button>
+    <pre id="jsonOutput"></pre>
+
+    <script>
+        function parseHTML() {
+            let htmlString = document.getElementById("htmlInput").value;
+
+            // Parse de HTML-string naar een DOM-object
+            let parser = new DOMParser();
+            let doc = parser.parseFromString(htmlString, "text/html");
+
+            let jsonData = [];
+
+            // Zoek alle content delen
+            let contentParts = doc.querySelectorAll('.content--part');
+            contentParts.forEach(part => {
+                let date = part.querySelector('.is-header span')?.textContent.trim() || "Geen datum";
+                let weekPlans = part.querySelectorAll('.week-plan');
+
+                let weekData = [];
+                weekPlans.forEach(plan => {
+                    let day = plan.querySelector('.week-plan--title')?.textContent.trim() || "Onbekende dag";
+                    let tasks = plan.querySelectorAll('.task');
+
+                    let taskData = [];
+                    tasks.forEach(task => {
+                        let description = task.querySelector('p')?.textContent.trim() || "Geen beschrijving";
+                        let time = task.querySelector('.task--summary-meta span')?.textContent.trim() || "Geen tijd";
+
+                        taskData.push({
+                            taak: description,
+                            tijd: time
+                        });
+                    });
+
+                    weekData.push({
+                        dag: day,
+                        taken: taskData
+                    });
+                });
+
+                jsonData.push({
+                    datum: date,
+                    weekSchema: weekData
+                });
+            });
+
+            // Toon de JSON-output
+            document.getElementById("jsonOutput").textContent = JSON.stringify(jsonData, null, 4);
+        }
+    </script>
+</body>
+</html>
