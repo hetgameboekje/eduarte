@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML naar JSON Parser</title>
+</head>
+<body>
+    <h1>HTML naar JSON Parser</h1>
+    
+    <textarea id="htmlInput" rows="15" cols="80" placeholder="Plak hier de volledige HTML-broncode..."></textarea>
+    
+    <button onclick="parseHTML()">Convert to JSON</button>
+    <pre id="output"></pre>
+
+    <script>
+        function parseHTML() {
+            const htmlString = document.getElementById("htmlInput").value;
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlString, "text/html");
+
+            let results = [];
+
+            // Zoek naar alle weekplanning-secties
+            const weekPlans = doc.querySelectorAll(".tasks-planning.week-planning");
+
+            weekPlans.forEach(weekPlan => {
+                const days = weekPlan.querySelectorAll(".week-plan");
+
+                days.forEach(day => {
+                    const dayName = day.querySelector(".week-plan--title")?.innerText.trim();
+                    const tasks = day.querySelectorAll(".task.week-plan-day");
+
+                    tasks.forEach(task => {
+                        const activity = task.querySelector("p")?.innerText.trim();
+                        const time = task.querySelector(".aanwezig")?.innerText.trim();
+                        const comment = task.querySelector(".week-day--comment p")?.innerText.trim() || "";
+
+                        results.push({
+                            date: dayName,
+                            time: time,
+                            activity: activity,
+                            comment: comment
+                        });
+                    });
+                });
+            });
+
+            document.getElementById("output").textContent = JSON.stringify(results, null, 4);
+        }
+    </script>
+</body>
+</html>

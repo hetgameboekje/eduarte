@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML naar JSON Parser</title>
+</head>
+<body>
+    <h1>HTML naar JSON Parser</h1>
+    
+    <textarea id="htmlInput" rows="10" cols="50">
+        <!-- Plak hier jouw HTML -->
+    </textarea>
+    
+    <button onclick="parseAndPost()">Convert & Send</button>
+    <pre id="output"></pre>
+
+    <script>
+        // Deze functie wordt gebruikt om de weekdag en datum op te halen.
+        function getDateForDay(weekDay, startDate) {
+            const date = new Date(startDate); // begin van de week
+            const dayOffsets = {
+                "ma": 0,
+                "di": 1,
+                "wo": 2,
+                "do": 3,
+                "vr": 4,
+                "za": 5,
+                "zo": 6
+            };
+            date.setDate(date.getDate() + dayOffsets[weekDay]);
+            return `${date.getDate().toString().padStart(2, '0')}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getFullYear()}`;
+        }
+
+        function parseAndPost() {
+            const inputHTML = document.getElementById("htmlInput").value;
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(inputHTML, "text/html");
+
+            let databaseRows = [];
+
+            const weekDays = ["ma", "di", "wo", "do", "vr", "za", "zo"];
+            const startDate = new Date(); // De startdatum van de week (bijv. maandag)
+
+            weekDays.forEach(weekDay => {
+                const dayContainer = doc.querySelector(`.week-plan .week-plan--title:contains(${weekDay})`);
+                const activityElement = dayContainer ? dayContainer.closest(".week-plan").querySelector(".task--summary p") : null;
+                const activity = activityElement ? activityElement.textContent.trim() : "Er is nog geen log op deze dag.";
+                const timeElement = dayContainer ? dayContainer.closest(".week-plan").querySelector(".aanwezig") : null;
+                const time = timeElement ? timeElement.textContent.trim() : "";
+
+                const date = getDateForDay(weekDay, startDate);
+                
+                databaseRows.push({
+                    "weekday": weekDay,
+                    "date": date,
+                    "activity": activity,
+                    "time": time
+                });
+            });
+
+            document.getElementById("output").textContent = JSON.stringify(databaseRows, null, 4);
+        }
+    </script>
+</body>
+</html>

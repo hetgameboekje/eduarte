@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML naar JSON Parser</title>
+</head>
+<body>
+    <h1>HTML naar JSON Parser</h1>
+    
+    <textarea id="htmlInput" rows="10" cols="50" placeholder="Plak hier jouw HTML..."></textarea>
+    <br>
+    <button onclick="parseHTML()">Convert to JSON</button>
+    
+    <h2>JSON Output:</h2>
+    <pre id="output"></pre>
+
+    <script>
+        function parseHTML() {
+            const html = document.getElementById("htmlInput").value;
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
+
+            let data = [];
+
+            // Zoek naar taken binnen de week-planning
+            document.querySelectorAll(".task.week-plan-day").forEach(task => {
+                let day = task.closest(".week-plan")?.querySelector(".week-plan--title")?.innerText || "Onbekend";
+                let activity = task.querySelector("p")?.innerText || "Geen activiteit";
+                let time = task.querySelector(".aanwezig")?.innerText || "Geen tijd";
+
+                data.push({ day, activity, time });
+            });
+
+            // Toon de JSON-output
+            document.getElementById("output").textContent = JSON.stringify(data, null, 4);
+        }
+    </script>
+</body>
+</html>

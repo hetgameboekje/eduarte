@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week Planner</title>
+</head>
+<body>
+    <!-- Input fields to paste the HTML content -->
+    <textarea id="html-input" rows="10" cols="50" placeholder="Paste the HTML content here"></textarea>
+    <button onclick="parseAndPost()">Parse and Convert to JSON</button>
+
+    <!-- Output the JSON result -->
+    <pre id="json-output"></pre>
+
+    <script>
+        function parseAndPost() {
+            // Get the HTML content from the input textarea
+            const htmlContent = document.getElementById('html-input').value;
+            
+            // Create a DOM element to parse the HTML
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlContent, 'text/html');
+            
+            // Find the start date from the week range (e.g., 17 februari - 23 februari)
+            const dateRange = doc.querySelector('.week-header .is-header span:nth-of-type(1)').textContent.trim(); // Assuming "17 februari"
+            const startDate = new Date(`${new Date().getFullYear()}-${getMonthNumber(dateRange.split(' ')[1])}-${dateRange.split(' ')[0]}`); // Constructing a valid date
+
+            // Find all the week-plan elements (days of the week)
+            const weekPlans = doc.querySelectorAll('.week-plan');
+            
+            const jsonData = [];
+
+            // Loop through each day (week-plan) and extract the data
+            weekPlans.forEach((weekPlan, index) => {
+                // Get the weekday name (ma, di, wo, etc.)
+                const weekday = weekPlan.querySelector('.week-plan--title') ? weekPlan.querySelector('.week-plan--title').textContent.trim() : '';
+
+                // Get the task (activity) description
+                const taskDescription = weekPlan.querySelector('.task--summary p') ? weekPlan.querySelector('.task--summary p').textContent.trim() : '';
+
+                // Get the time (e.g., 8u)
+                const time = weekPlan.querySelector('.task--summary-meta .aanwezig') ? weekPlan.querySelector('.task--summary-meta .aanwezig').textContent.trim() : '';
+
+                // Calculate the correct date for each day
+                const currentDate = new Date(startDate);
+                currentDate.setDate(startDate.getDate() + index);
+
+                // Format the date as "DD-MM-YYYY"
+                const formattedDate = `${currentDate.getDate()}-${currentDate.getMonth() + 1}-${currentDate.getFullYear()}`;
+
+                // Build the data object for each day
+                jsonData.push({
+                    "weekday": weekday,
+                    "date": formattedDate,
+                    "activity": taskDescription,
+                    "time": time
+                });
+            });
+
+            // Output the result as JSON
+            document.getElementById('json-output').textContent = JSON.stringify(jsonData, null, 2);
+        }
+
+        // Helper function to get month number from month name
+        function getMonthNumber(monthName) {
+            const months = {
+                "januari": 1,
+                "februari": 2,
+                "maart": 3,
+                "april": 4,
+                "mei": 5,
+                "juni": 6,
+                "juli": 7,
+                "augustus": 8,
+                "september": 9,
+                "oktober": 10,
+                "november": 11,
+                "december": 12
+            };
+            return months[monthName.toLowerCase()];
+        }
+    </script>
+</body>
+</html>

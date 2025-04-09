@@ -1,4044 +1,1638 @@
 
+<!DOCTYPE html>
+<html>
+<head><script type="text/javascript" src="../../wicket/resource/org.apache.wicket.resource.JQueryResourceReference/jquery/jquery-3.7.1-ver-962A4A135B116C30221466C5E4F0E7A1.js"></script>
+<script type="text/javascript" src="../../wicket/resource/nl.topicus.eduario.web.components.panel.EduArioFeedbackPanel/eduariofeedbackpanel-ver-AAC06FF60F955F9126AE1B506BCF595F.js"></script>
+<script type="text/javascript" src="../../wicket/resource/org.apache.wicket.ajax.AbstractDefaultAjaxBehavior/res/js/wicket-ajax-jquery-ver-8FBF37ACEFA139878F1F4590E87D62F8.js"></script>
+<script type="text/javascript" src="../../wicket/resource/nl.topicus.eduario.web.behaviors.EduArioUIResourceReference/EduArioUI-ver-ECD332962F4363B84DB23430D2667F9F.js"></script>
+<script type="text/javascript" src="../../wicket/resource/nl.topicus.eduario.web.components.menu.AbstractSubMenu/SubMenuHeaderTabs-ver-C0030CDAED02C73E3628299320FB22C4.js"></script>
+<script type="text/javascript" id="wicket-ajax-base-url">
+/*<![CDATA[*/
+Wicket.Ajax.baseUrl="stage/i-9223162165956925469/logboek?2";
+/*]]>*/
+</script>
+<script type="text/javascript" src="../../wicket/resource/nl.topicus.cobra.web.components.ajax.LazyLoaderResourceReference/jquery.lazyloader-ver-748BDB85E7865D485A2B5F6E716DE3DC.js"></script>
+<script type="text/javascript" src="../../wicket/resource/nl.topicus.cobra.web.components.wiquery.resources.ResourceRefUtil/json2-ver-BA3293970E13B03A2EA92F5B6B5BF544.js"></script>
+<script type="text/javascript" src="../../wicket/resource/nl.topicus.cobra.web.behaviors.ServerCallAjaxBehaviour/servercall-ver-1BD74B29477C92B5665667CA005BCDD6.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="apple-mobile-web-app-title" content="Eduarte Portalen" />
+<link rel="apple-touch-icon" sizes="180x180"
+	href="/assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="/assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+	href="/assets/img/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg"
+	color="#5bbad5">
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config"
+	content="/assets/img/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Eduarte Portalen" />
+<meta name="author" content="Topicus Onderwijs Eduarte B.V." />
+<title>Logboek - Eduarte Portalen</title>
+<!-- Page class: class nl.topicus.eduario.web.pages.stage.logboek.LogboekPage -->
+<link rel="stylesheet" type="text/css" href="../../wicket/resource/assets.AssetsResourceReferenceMarker/stylesheets/styles-ver-037C53C6F5EB5E72A865DB6825AD0542.css" />
+<script type="text/javascript" src="../../wicket/resource/nl.topicus.eduario.web.pages.AbstractEduArioPage/jquery.viewport.mini-ver-318ED33BBDEE2EF7181386682CDF6E63.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+Wicket.Event.add(window, "domready", function(event) { 
+$('#id12').eduArioFeedback();;
+$('#id13').menuToggle();;
+$('#id14').headerTabs();;
+$('#id15').menuToggle();;
+Wicket.Ajax.ajax({"u":"./logboek?2-2.0-logboekWeken-1-weekpanel-weekContainer-days-0-logEntry-indienen","c":"id33","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./logboek?2-2.0-logboekWeken-1-weekpanel-weekContainer-days-0-logEntry-edit","c":"id34","e":"click","pd":true});;
+Wicket.Ajax.ajax({"u":"./logboek?2-2.0-logboekWeken-1-weekpanel-weekContainer-days-1-empty-new","c":"id35","e":"click","pd":true});;
+$('#id19').popoutToggle();;
+$('#id1a').popoutToggle();;
+$('#id1b').popoutToggle();;
+$('#id1c').popoutToggle();;
+$('#id2d').popoutToggle();;
+$('#id2f').popoutToggle();;
+$('#id31').popoutToggle();;
+$('#id1d').lazyloader({fetchAtLoad: true, done: false});;
+$('#id1d').bindServerCall({ajax: {"u":"./logboek?2-2.0-lazyLoader","m":"POST","c":"id1d"}});;
+Wicket.Event.publish(Wicket.Event.Topic.AJAX_HANDLERS_BOUND);
+;});
+/*]]>*/
+</script>
+</head>
+<body>
+	<div class="l-container">
+		<nav class="navigation navigation--student">
+	<div class="navigation-header">
+		<div class="navigation-header--logo">
+			<a>
+				<img src="../../wicket/resource/assets.AssetsResourceReferenceMarker/img/logo-eduarte-ver-32D7105DA3CDE3536F497A7629C8054B.svg" alt="EduArtelogo"/>
+			</a>
+		</div>
+		<div class="omgevingIndicator productieomgeving"></div>
+		<i class="navigation-header--close-navigation js-navigation flaticon x-1" id="id13"></i>
+	</div>
+	<div class="navigation-items">
+		<ul class="navigation-items--main">
+			
+	<li>
+		
+	<a href="../../" title="Dashboard"><i class="flaticon house icon-home"></i>Dashboard</a>
+	
+
+	</li><li>
+		
+	<a href="../../agenda" title="Agenda"><i class="flaticon calendar-4 icon-calendar"></i>Agenda</a>
+	
+
+	</li><li>
+		
+	<a href="../../presentie/presentie.overzicht" title="Presentie"><i class="flaticon calendar-2 icon-calendar-check"></i>Presentie</a>
+	
+
+	</li><li class="is-selected">
+		
+	<a href="../../stage" title="Stage"><i class="flaticon suitcase-1 icon-case"></i>Stage</a>
+	
+
+	</li><li>
+		
+	<a href="../../studie/opleiding" title="Studie"><i class="flaticon building-1 icon-graduation"></i>Studie</a>
+	
+
+	</li><li>
+		
+	
+	
+
+	</li><li>
+		
+	
+	
+
+	</li><li>
+		
+	
+	
+
+	</li><li>
+		
+	
+	
+
+	</li><li>
+		
+	<a href="../../resultaten" title="Resultaten"><i class="flaticon menu-list-1 icon-bar-graph"></i>Resultaten</a>
+	
+
+	</li>
+
+		</ul>
+	</div>
+	<div class="navigation-footer">
+		<ul>
+			<li>
+	<a href="../../account" title="Profiel">
+		<i class="flaticon user-2 icon-user"></i>
+		Profiel
+	</a>
+</li><li>
+	<a href="./logboek?2-2.-menu-footer-2-uitloggen" title="Uitloggen">
+		<i class="flaticon logout icon-logout-1"></i>
+		Uitloggen
+	</a>
+</li>
+		</ul>
+	</div>
+</nav>
+		<div class="l-flex-content">
+			
+	<header class="header">
+		<div class="header-toolbar">
+			<i class="header-toolbar--open-navigation js-navigation flaticon menu-2" id="id15"></i>
+			<h1>
+	
+		<a href="../../stage">
+	<span class="is-fixed is-lastcrumb">Stage</span>
+</a>
+		
+		<i class="flaticon right-2"></i>
+	
+		<a href="./info">
+	<span class="is-dynamic is-lastcrumb">Stage vanaf 26 oktober 2024</span>
+</a>
+		
+		<i class="flaticon right-2"></i>
+	
+		
+		
+	<span class="is-fixed is-lastcrumb is-single">Logboek</span>
+
+		
+	 
+</h1>
+			
+		</div>
+		<div class="header-tabs" id="id14">	
+	<ul>
+		<li class="is-selected">
+			
+	<a href="./logboek" title="Logboek">Logboek</a>
+
+		</li><li>
+			
+	
+
+		</li><li>
+			
+	<a href="./dossier" title="Dossier">Dossier</a>
+
+		</li><li>
+			
+	<a href="./info" title="Info">Info</a>
+
+		</li>
+	</ul>
+	<span class="header-tabs--toggle">
+		<i class="flaticon menu-2"></i>
+	</span>
+</div>
+	</header>
+
+			<div class="popover defaultPopoverWidth" id="id1e">
+</div>
+			<aside class="s5-aside-slidebar">
+				<div id="id1f" hidden="" data-wicket-placeholder=""></div>
+			</aside>
+			<section class="content-wrapper js-scroll-wrapper">
+				<div id="id12">
+	
+</div>
 					
 		
-	<div class="content l-medium" id="id2a2">
+	<div class="content l-medium" id="id20">
 		
-		<div id="id2a3" hidden="" data-wicket-placeholder=""></div>
-		<div class="content--part" id="id2a4">
+		<div id="id21" hidden="" data-wicket-placeholder=""></div>
+		<div class="content--part" id="id22">
 	        
-
-        <h2 class="is-header">
-        	<span>21 oktober</span> - <span>27 oktober</span> 
-        	<span class="is-soft">/ Week <span>43</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id29c">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik thuis gewerkt aan documentatie</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik thuis gewerkt aan documentatie</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Ook vandaag was een thuis werk dag, ik heb ook wat voor school moeten doen ter voorbereiding op mijn examen, en ik heb gewerkt aan documentatie en het opzetten van een server, waarbij ik wildcards voor domeinen gebruik en met een react server een website pagina laat zien</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Ook vandaag was een thuis werk dag, ik heb ook wat voor school moeten doen ter voorbereiding op mijn examen, en ik heb gewerkt aan documentatie en het opzetten van een server, waarbij ik wildcards voor domeinen gebruik en met een react server een website pagina laat zien</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag op stage heb ik mijn best gedaan om een json view te weergeven zodat ik via ajax een sequentie kan generen vanuit de database</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag op stage heb ik mijn best gedaan om een json view te weergeven zodat ik via ajax een sequentie kan generen vanuit de database</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Ik heb alle queries opgeschoont en met een ander project bezig gehouden</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Ik heb alle queries opgeschoont en met een ander project bezig gehouden</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag doorgegaan met waar ik bezig was, en eerder gegaan omdat ik iets eerder naar werk moest</span>
-						</p>
-						<small class="task--summary-meta"> <span>5u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag doorgegaan met waar ik bezig was, en eerder gegaan omdat ik iets eerder naar werk moest</p>
-							<div class="popout--emotion is-neutral">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2a5">Laatst goedgekeurd op 06-11-2024 om 9:22 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 37u</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2a6">
-	        
-
-        <h2 class="is-header">
-        	<span>14 oktober</span> - <span>20 oktober</span> 
-        	<span class="is-soft">/ Week <span>42</span> <span>2024</span></span>
-        </h2>
- 
+	<div class="week-header">
+		<h2 class="is-header">
+			<span>31 maart</span> -
+			<span>6 april</span>
+			<span class="is-soft">/ Week <span>14</span> </span>
+		</h2>
+	</div>
 
 	        
-		<div class="tasks tasks-planning" id="id29d">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag ben ik begonnen met het omzetten van de training module van eigen code naar degoware</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag ben ik begonnen met het omzetten van de training module van eigen code naar degoware</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik besproken hoe ik verder dit wil beeldvormen en hoe de modules en letters op de led verlichting worden weergegeven</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik besproken hoe ik verder dit wil beeldvormen en hoe de modules en letters op de led verlichting worden weergegeven</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>De training heb ik aangepast en de database kloppend gemaakt met koppel tabellen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>De training heb ik aangepast en de database kloppend gemaakt met koppel tabellen</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag is er een ontruiming geweest op de kruisstraat dus hebben we bedrijfsactiviteiten uitgevoerd</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag is er een ontruiming geweest op de kruisstraat dus hebben we bedrijfsactiviteiten uitgevoerd</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik thuis gewerkt, waarbij ik in php wat persoonlijke projecten heb bijgewerkt en besproken heb binnen het team</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik thuis gewerkt, waarbij ik in php wat persoonlijke projecten heb bijgewerkt en besproken heb binnen het team</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2a7">Laatst goedgekeurd op 30-10-2024 om 11:51 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 40u</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2a8">
-	        
-
-        <h2 class="is-header">
-        	<span>7 oktober</span> - <span>13 oktober</span> 
-        	<span class="is-soft">/ Week <span>41</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id29e">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik gewerkt aan een ERD in excel, dit aan hugo laten zien en feedback ontvangen, wat dingen aangepast en de rest van de documentatie van het project up to date gemaakt. ook ben ik dus verder kunnen programeren tot extenties in php van degoware</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik gewerkt aan een ERD in excel, dit aan hugo laten zien en feedback ontvangen, wat dingen aangepast en de rest van de documentatie van het project up to date gemaakt. ook ben ik dus verder kunnen programeren tot extenties in php van degoware</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik verder gewerkt en kan ik een naam voor een knop toevoegen zoals de letter B waarbij ik een code kan doorsturen om dit naar de arduino te sturen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik verder gewerkt en kan ik een naam voor een knop toevoegen zoals de letter B waarbij ik een code kan doorsturen om dit naar de arduino te sturen</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik mij bezig gehouden met de knop werkend te krijgen om de leds via de database te versturen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik mij bezig gehouden met de knop werkend te krijgen om de leds via de database te versturen</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Deze dag hebben we voornamelijk besproken over wat er in de documentatie staat en wat onregelmatigheid in de documentatie aangepast</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Deze dag hebben we voornamelijk besproken over wat er in de documentatie staat en wat onregelmatigheid in de documentatie aangepast</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>vandaag heb ik wat foutjes en onregelmatigheden in de code aangepast</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>vandaag heb ik wat foutjes en onregelmatigheden in de code aangepast</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2a9">Laatst goedgekeurd op 30-10-2024 om 11:51 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 40u</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2aa">
-	        
-
-        <h2 class="is-header">
-        	<span>30 september</span> - <span>6 oktober</span> 
-        	<span class="is-soft">/ Week <span>40</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2ad">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag opnieuw begonnen aan de embedded project, waarbij we met een Socket, Serialmonitor voor arduino en degoware zijn begonnen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag opnieuw begonnen aan de embedded project, waarbij we met een Socket, Serialmonitor voor arduino en degoware zijn begonnen</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik een socket server in C# gemaakt volgens een tutorial, het werkt nog niet want heb geen client</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik een socket server in C# gemaakt volgens een tutorial, het werkt nog niet want heb geen client</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik de client gemaakt en wou over gaan naar degoware maar moet iets van een security error oplossen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik de client gemaakt en wou over gaan naar degoware maar moet iets van een security error oplossen</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>De SSL verbinding tussen de wss en php server kan niet gelegd worden omdat in C# alle SSL modules outdated zijn en geen tutorial kan vinden online</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>De SSL verbinding tussen de wss en php server kan niet gelegd worden omdat in C# alle SSL modules outdated zijn en geen tutorial kan vinden online</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag gesprek gehad want er was niet veel vooruitgang, veel te lang gehangen op de SSL probleem, dus ben overgestapt naar GO lang, code van hugo wat ik niet helemaal snap maar kan nu wel verder met de arduino te besturen vanuit het internet</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag gesprek gehad want er was niet veel vooruitgang, veel te lang gehangen op de SSL probleem, dus ben overgestapt naar GO lang, code van hugo wat ik niet helemaal snap maar kan nu wel verder met de arduino te besturen vanuit het internet</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2ae">Laatst goedgekeurd op 15-10-2024 om 8:49 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 40u</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2ab">
-	        
-
-        <h2 class="is-header">
-        	<span>23 september</span> - <span>29 september</span> 
-        	<span class="is-soft">/ Week <span>39</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2af">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>vandaag de embedded project uitgetest</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>vandaag de embedded project uitgetest</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag vervolg stappen gezet voor embedded waarbij er vervolgstappen zijn bedacht</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag vervolg stappen gezet voor embedded waarbij er vervolgstappen zijn bedacht</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Voor de afwisseling aan de todo project gewerkt, front end is niet leuk</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Voor de afwisseling aan de todo project gewerkt, front end is niet leuk</p>
-							<div class="popout--emotion is-neutral">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>De todoboard had een paar visuele bugs wat ik probeerde eruit te halen , veel was een succes maar echt scss met Z-index is niet makkelijk</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>De todoboard had een paar visuele bugs wat ik probeerde eruit te halen , veel was een succes maar echt scss met Z-index is niet makkelijk</p>
-							<div class="popout--emotion is-neutral">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Binnen de todo heb ik nog wat visuele booleans en sleep balkjes toegevoegd</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Binnen de todo heb ik nog wat visuele booleans en sleep balkjes toegevoegd</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2b0">Laatst goedgekeurd op 15-10-2024 om 8:49 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 40u</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2ac">
-	        
-
-        <h2 class="is-header">
-        	<span>16 september</span> - <span>22 september</span> 
-        	<span class="is-soft">/ Week <span>38</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2b1">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Ook vandaag heb ik de code opgeschoont en voorbereidingen getroffen om wat code aan te passen om meer overzicht te krijgen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Ook vandaag heb ik de code opgeschoont en voorbereidingen getroffen om wat code aan te passen om meer overzicht te krijgen</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik gewerkt aan het project scherm, waarbij je per status kan zien hoeveel items erin zitten en deze aan/uit zetten</span>
-						</p>
-						<small class="task--summary-meta"> <span>7u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik gewerkt aan het project scherm, waarbij je per status kan zien hoeveel items erin zitten en deze aan/uit zetten</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span></span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p></p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span></span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p></p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span></span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p></p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2b2">Laatst goedgekeurd op 30-10-2024 om 11:51 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 39u</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2b3">
-	        
-
-        <h2 class="is-header">
-        	<span>9 september</span> - <span>15 september</span> 
-        	<span class="is-soft">/ Week <span>37</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2bd">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag aan de arduino project gewerkt waarbij we led lampjes codetaal kunnen doorsturen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag aan de arduino project gewerkt waarbij we led lampjes codetaal kunnen doorsturen</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag gewerkt aan Degosoft todolist, wat bugs gefixed met posts en slepen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag gewerkt aan Degosoft todolist, wat bugs gefixed met posts en slepen</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag gewerkt aan het toevoegen van de update functie, waarbij je voorafingevulde data ziet</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag gewerkt aan het toevoegen van de update functie, waarbij je voorafingevulde data ziet</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Heb wat gewerkt aan de front end van de todoboard</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Heb wat gewerkt aan de front end van de todoboard</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Logica en queries herschreven</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Logica en queries herschreven</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2be">Laatst goedgekeurd op 24-09-2024 om 15:24 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 40u</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2b4">
-	        
-
-        <h2 class="is-header">
-        	<span>2 september</span> - <span>8 september</span> 
-        	<span class="is-soft">/ Week <span>36</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2bf">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>vandaag gestart aan stage</span>
-						</p>
-						<small class="task--summary-meta"> <span>5u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>vandaag gestart aan stage</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag begonnen aan het maken van een arduino project, waarbij we een trillende armband maken</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag begonnen aan het maken van een arduino project, waarbij we een trillende armband maken</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Weer gewerkt aan de armband, waarbij we ook overlegd hadden wat de beste oplossing zou zijn. Hiervoor meer oefen materiaal gebruikt en een prachtig kunstwerk ontwikkelt</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Weer gewerkt aan de armband, waarbij we ook overlegd hadden wat de beste oplossing zou zijn. Hiervoor meer oefen materiaal gebruikt en een prachtig kunstwerk ontwikkelt</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Na het testen van de mogelijke oplossingen wat het beste werkt zijn we begonnen aan het maken van een ontwerp, waar we rekening mee moeten houden en wat we even achterwegen moeten laten</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Na het testen van de mogelijke oplossingen wat het beste werkt zijn we begonnen aan het maken van een ontwerp, waar we rekening mee moeten houden en wat we even achterwegen moeten laten</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Losse onderdelen zijn vandaag een beetje gesorteerd, en verder ook de onderdelen samen gevoegd voor de armband zodat we wat compacteren modules hebben</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Losse onderdelen zijn vandaag een beetje gesorteerd, en verder ook de onderdelen samen gevoegd voor de armband zodat we wat compacteren modules hebben</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2c0">Laatst goedgekeurd op 10-09-2024 om 8:52 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 37u</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2b5">
-	        
-
-        <h2 class="is-header">
-        	<span>26 augustus</span> - <span>1 september</span> 
-        	<span class="is-soft">/ Week <span>35</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2c1">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small id="id2c2" hidden="" data-wicket-placeholder=""></small>  
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2b6">
-	        
-
-        <h2 class="is-header">
-        	<span>19 augustus</span> - <span>25 augustus</span> 
-        	<span class="is-soft">/ Week <span>34</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2c3">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small id="id2c4" hidden="" data-wicket-placeholder=""></small>  
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2b7">
-	        
-
-        <h2 class="is-header">
-        	<span>12 augustus</span> - <span>18 augustus</span> 
-        	<span class="is-soft">/ Week <span>33</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2c5">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small id="id2c6" hidden="" data-wicket-placeholder=""></small>  
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2b8">
-	        
-
-        <h2 class="is-header">
-        	<span>5 augustus</span> - <span>11 augustus</span> 
-        	<span class="is-soft">/ Week <span>32</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2c7">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small id="id2c8" hidden="" data-wicket-placeholder=""></small>  
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2b9">
-	        
-
-        <h2 class="is-header">
-        	<span>29 juli</span> - <span>4 augustus</span> 
-        	<span class="is-soft">/ Week <span>31</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2c9">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small id="id2ca" hidden="" data-wicket-placeholder=""></small>  
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2ba">
-	        
-
-        <h2 class="is-header">
-        	<span>22 juli</span> - <span>28 juli</span> 
-        	<span class="is-soft">/ Week <span>30</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2cb">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small id="id2cc" hidden="" data-wicket-placeholder=""></small>  
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2bb">
-	        
-
-        <h2 class="is-header">
-        	<span>15 juli</span> - <span>21 juli</span> 
-        	<span class="is-soft">/ Week <span>29</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2cd">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small id="id2ce" hidden="" data-wicket-placeholder=""></small>  
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2bc">
-	        
-
-        <h2 class="is-header">
-        	<span>8 juli</span> - <span>14 juli</span> 
-        	<span class="is-soft">/ Week <span>28</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2cf">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>De grid systeem is dit keer in javascript in plaats van css en alle blokken zijn objects die ieder apart aangesproken kunnen worden</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>De grid systeem is dit keer in javascript in plaats van css en alle blokken zijn objects die ieder apart aangesproken kunnen worden</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>De map data kan ingeladen worden met een JSON bestand waarbij je kan kiezen uit de type , locatie en grootte</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>De map data kan ingeladen worden met een JSON bestand waarbij je kan kiezen uit de type , locatie en grootte</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Met Jquery en SCSS heb ik de todo opnieuw gemaakt waarbij er een JSON bestand in de console wordt gelogt. JSON doet verder niets</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Met Jquery en SCSS heb ik de todo opnieuw gemaakt waarbij er een JSON bestand in de console wordt gelogt. JSON doet verder niets</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Verder de projecten afgerond en code opgeschoont ter voorbereiding documentatie</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Verder de projecten afgerond en code opgeschoont ter voorbereiding documentatie</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Gedocumenteerd wat er voor de vakantie gedaan is, waarbij we besproken hebben wat of er wat verwacht wordt en verder nog wat bugfixes geprobeerd maar niet gelukt</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Gedocumenteerd wat er voor de vakantie gedaan is, waarbij we besproken hebben wat of er wat verwacht wordt en verder nog wat bugfixes geprobeerd maar niet gelukt</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2d0">Laatst goedgekeurd op 30-10-2024 om 11:51 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 40u</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2d1">
-	        
-
-        <h2 class="is-header">
-        	<span>1 juli</span> - <span>7 juli</span> 
-        	<span class="is-soft">/ Week <span>27</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2d5">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>In javascript heb ik verder met jquery geleerd in een project om een kubus te laten bewegen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>In javascript heb ik verder met jquery geleerd in een project om een kubus te laten bewegen</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>De kubus kan bewegen en heeft een kleur, kan diagonaal bewegen op de X en Y as</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>De kubus kan bewegen en heeft een kleur, kan diagonaal bewegen op de X en Y as</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>De kubus kan vrij bewegen in een grid systeem maar ook daarbuiten</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>De kubus kan vrij bewegen in een grid systeem maar ook daarbuiten</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Het grid systeem is met CSS gemaakt waarbij er met devtools de positie van de kubus kan verandert worden naast het keyboard. Ook is er een tweede kubus die als muur dient. deze kan vergroot worden maar heeft niet de nieuwe eigenschappen voor de collision</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Het grid systeem is met CSS gemaakt waarbij er met devtools de positie van de kubus kan verandert worden naast het keyboard. Ook is er een tweede kubus die als muur dient. deze kan vergroot worden maar heeft niet de nieuwe eigenschappen voor de collision</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Ik ben opnieuw begonnen waarbij ik meer OOP gebruik</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Ik ben opnieuw begonnen waarbij ik meer OOP gebruik</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2d6">Laatst goedgekeurd op 02-09-2024 om 9:36 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 40u</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2d2">
-	        
-
-        <h2 class="is-header">
-        	<span>24 juni</span> - <span>30 juni</span> 
-        	<span class="is-soft">/ Week <span>26</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2d7">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>verder gewerkt aan de backend van todo, post gefixed met jquery en ajax</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>verder gewerkt aan de backend van todo, post gefixed met jquery en ajax</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Verdere puntjes op de I gezet in alle modules</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Verdere puntjes op de I gezet in alle modules</p>
-							<div class="popout--emotion is-neutral">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>begonnen aan het leren van Jquery UI en javascript</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>begonnen aan het leren van Jquery UI en javascript</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Een klein project gemaakt waarbij ik verschillende elementen uit test</span>
-						</p>
-						<small class="task--summary-meta"> <span>6u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Een klein project gemaakt waarbij ik verschillende elementen uit test</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Verder javascript geleerd waarbij ik elementen aanpas, kleuren en andere methodes</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Verder javascript geleerd waarbij ik elementen aanpas, kleuren en andere methodes</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2d8">Laatst goedgekeurd op 02-09-2024 om 9:36 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 38u</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2d3">
-	        
-
-        <h2 class="is-header">
-        	<span>17 juni</span> - <span>23 juni</span> 
-        	<span class="is-soft">/ Week <span>25</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2d9">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Gehele todo module afgerond en database gevuld met echte data voor test redenen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u10m</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Gehele todo module afgerond en database gevuld met echte data voor test redenen</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Todoboard sleepbaar gemaakt in JS</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Todoboard sleepbaar gemaakt in JS</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Todoboard sleepbaar met JS, ajax en een post naar de php website met een verification voor GUIDs</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Todoboard sleepbaar met JS, ajax en een post naar de php website met een verification voor GUIDs</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Todolist js bestand bewerken met oop en slepen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Todolist js bestand bewerken met oop en slepen</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2da">Laatst goedgekeurd op 26-06-2024 om 10:08 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 32u10m</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2d4">
-	        
-
-        <h2 class="is-header">
-        	<span>10 juni</span> - <span>16 juni</span> 
-        	<span class="is-soft">/ Week <span>24</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2db">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik een begin gemaakt aan de module todo en projecten</span>
-						</p>
-						<small class="task--summary-meta"> <span>4u30m</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik een begin gemaakt aan de module todo en projecten</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag ben ik verder gaan werken met het leggen van relaties tussen tables</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag ben ik verder gaan werken met het leggen van relaties tussen tables</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Het was een zeer spannende dag vandaag. veel bugs weer gehad maar ook een teamuitje.</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Het was een zeer spannende dag vandaag. veel bugs weer gehad maar ook een teamuitje.</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag was het even moeizaam. Ik heb niet veel gecodeerd. Wel heb ik aan de levelweek gewerkt en documentatie geschreven waarbij een reflectie is ingevuld.</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag was het even moeizaam. Ik heb niet veel gecodeerd. Wel heb ik aan de levelweek gewerkt en documentatie geschreven waarbij een reflectie is ingevuld.</p>
-							<div class="popout--emotion is-neutral">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2dc">Laatst goedgekeurd op 26-06-2024 om 10:08 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 28u30m</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2dd">
-	        
-
-        <h2 class="is-header">
-        	<span>3 juni</span> - <span>9 juni</span> 
-        	<span class="is-soft">/ Week <span>23</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2e2">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Contract overzicht , bugfixes en meer kleine geschillen in code gefixed</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Contract overzicht , bugfixes en meer kleine geschillen in code gefixed</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Rekenexamen voorbereid, verdere inconsistancies aangepast en brainstorm met hugo over de applicatie voor urenstaten</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Rekenexamen voorbereid, verdere inconsistancies aangepast en brainstorm met hugo over de applicatie voor urenstaten</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag op school geweest ivm miscommunicatie, heb ik de examples weg gehaalt, de stijl van mijn geschreven code gecorrigeerd en wat kleine bugfixed/patches waarbij nog functionaliteit is toegevoegd van een knop waarbij je standaard de functie stagier kan toevoegen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag op school geweest ivm miscommunicatie, heb ik de examples weg gehaalt, de stijl van mijn geschreven code gecorrigeerd en wat kleine bugfixed/patches waarbij nog functionaliteit is toegevoegd van een knop waarbij je standaard de functie stagier kan toevoegen</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik tijdens school gewerkt aan de module om op de knop &quot;stagiaire&quot; te drukken waardoor een stagiare contract samen word gesteld met tijden, dagen en start-eind datum</span>
-						</p>
-						<small class="task--summary-meta"> <span>1u45m</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik tijdens school gewerkt aan de module om op de knop &quot;stagiaire&quot; te drukken waardoor een stagiare contract samen word gesteld met tijden, dagen en start-eind datum</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik mijn fouten van gister gecorrigeerd waarbij er wat veranderingen zijn gemaakt dat bepaalde data standaart is ipv een aparte knop, seeds in de xml bestand voor postgres zijn aangescherpt en wat andere kleine wijzigingen in mijn code</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik mijn fouten van gister gecorrigeerd waarbij er wat veranderingen zijn gemaakt dat bepaalde data standaart is ipv een aparte knop, seeds in de xml bestand voor postgres zijn aangescherpt en wat andere kleine wijzigingen in mijn code</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2e3">Laatst goedgekeurd op 26-06-2024 om 10:08 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 33u45m</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2de">
-	        
-
-        <h2 class="is-header">
-        	<span>27 mei</span> - <span>2 juni</span> 
-        	<span class="is-soft">/ Week <span>22</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2e4">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik besloten dat het project eigenheimer niet werkt. Ik ben toen gelijk begonnen aan het maken van een registratie formulier van medewerkers en heb het begin gesprek gehad met dhr. Steens, en hugo</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik besloten dat het project eigenheimer niet werkt. Ik ben toen gelijk begonnen aan het maken van een registratie formulier van medewerkers en heb het begin gesprek gehad met dhr. Steens, en hugo</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag verder gewerkt aan registratie van gebruikers en medewerkers, en 3 bugs opgelost</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag verder gewerkt aan registratie van gebruikers en medewerkers, en 3 bugs opgelost</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag verder gewerkt aan registratie van gebruikers en medewerkers, en 3 bugs opgelost</span>
-						</p>
-						<small class="task--summary-meta"> <span>7u30m</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag verder gewerkt aan registratie van gebruikers en medewerkers, en 3 bugs opgelost</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik een begin gemaakt met een overzicht maken voor contracten van medewerkers</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik een begin gemaakt met een overzicht maken voor contracten van medewerkers</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag ben ik verder gegaan met een overzicht maken voor contracten van medewerkers</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag ben ik verder gegaan met een overzicht maken voor contracten van medewerkers</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2e5">Laatst goedgekeurd op 26-06-2024 om 10:08 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 39u30m</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2df">
-	        
-
-        <h2 class="is-header">
-        	<span>20 mei</span> - <span>26 mei</span> 
-        	<span class="is-soft">/ Week <span>21</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2e6">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Ben naar school geweest op gesprek met groepje.
-Hierbij ben ik verder gegaan met het maken van documentatie van het project eigenheimer</span>
-						</p>
-						<small class="task--summary-meta"> <span>2u50m</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Ben naar school geweest op gesprek met groepje.
-Hierbij ben ik verder gegaan met het maken van documentatie van het project eigenheimer</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2e7">Laatst goedgekeurd op 26-06-2024 om 10:08 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 2u50m</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2e0">
-	        
-
-        <h2 class="is-header">
-        	<span>13 mei</span> - <span>19 mei</span> 
-        	<span class="is-soft">/ Week <span>20</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2e8">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Heb het overzicht afgerond en ben verder begonnen aan eigenheimer</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Heb het overzicht afgerond en ben verder begonnen aan eigenheimer</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Ik heb een navbar gemaakt in php waarbij je dynamisch je headers kan toevoegen Ook heb ik een begin gemaakt aan een winkelmandje</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Ik heb een navbar gemaakt in php waarbij je dynamisch je headers kan toevoegen Ook heb ik een begin gemaakt aan een winkelmandje</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik het winkelmandje verder uit gewerkt, je kan kiezen uit producten vanuit de database, waarbij je krijgt te zien wat je geselecteerd hebt.</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik het winkelmandje verder uit gewerkt, je kan kiezen uit producten vanuit de database, waarbij je krijgt te zien wat je geselecteerd hebt.</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik nadat ik tegen een communicatie probleem aangelopen heb contact opgenomen waarbij we afgesproken hebben dat we samen moeten komen om nieuwe afspraken te maken. Hierbij hebben we afgesproken dat we nieuwe afspraken gaan maken, code workshop geef aan het groepje en dat we even goed moeten kijken hoe we dit opppaken.</span>
-						</p>
-						<small class="task--summary-meta"> <span>5u15m</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik nadat ik tegen een communicatie probleem aangelopen heb contact opgenomen waarbij we afgesproken hebben dat we samen moeten komen om nieuwe afspraken te maken. Hierbij hebben we afgesproken dat we nieuwe afspraken gaan maken, code workshop geef aan het groepje en dat we even goed moeten kijken hoe we dit opppaken.</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Heb met PHP verbinding gemaakt met een google app en geleert hoe de api van NS werkt en hoe ik een kleinschalige api zelf maak</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Heb met PHP verbinding gemaakt met een google app en geleert hoe de api van NS werkt en hoe ik een kleinschalige api zelf maak</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
-					</div>
-				</div>
-			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2e9">Laatst goedgekeurd op 30-05-2024 om 13:26 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 37u15m</small> 
-			</div>
-		</div>
-	
-		</div><div class="content--part" id="id2e1">
-	        
-
-			<h2 class="is-header">
-				<span>6 mei</span> - <span>12 mei</span> 
-				<span class="is-soft">/ Week <span>19</span> <span>2024</span></span>
-			</h2>
-	
-
-				
-			<div class="tasks tasks-planning" id="id2ea">
-				<div class="week-plan">
-					<span class="week-plan--title">ma</span>
+	<div class="tasks tasks-planning week-planning" id="id19">
+		<div class="week-plan">
+			<span class="week-plan--title">ma</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
 					
-					<div class="task task--empty">
-						<div class="task--summary">
-							<p>Er is nog geen log op deze dag.</p>
-							
-						</div>
-					</div>
-				</div><div class="week-plan">
-					<span class="week-plan--title">di</span>
-					
-					<div class="task task--empty">
-						<div class="task--summary">
-							<p>Er is nog geen log op deze dag.</p>
-							
-						</div>
-					</div>
-				</div><div class="week-plan">
-					<span class="week-plan--title">wo</span>
-					
-					<div class="task task--empty">
-						<div class="task--summary">
-							<p>Er is nog geen log op deze dag.</p>
-							
-						</div>
-					</div>
-				</div><div class="week-plan">
-					<span class="week-plan--title">do</span>
-					
-					<div class="task task--empty">
-						<div class="task--summary">
-							<p>Er is nog geen log op deze dag.</p>
-							
-						</div>
-					</div>
-				</div><div class="week-plan">
-					<span class="week-plan--title">vr</span>
-					
-					<div class="task task--empty">
-						<div class="task--summary">
-							<p>Er is nog geen log op deze dag.</p>
-							
-						</div>
-					</div>
-				</div><div class="week-plan">
-					<span class="week-plan--title">za</span>
-					
-					<div class="task task--empty">
-						<div class="task--summary">
-							<p>Er is nog geen log op deze dag.</p>
-							
-						</div>
-					</div>
-				</div><div class="week-plan">
-					<span class="week-plan--title">zo</span>
-					
-					<div class="task task--empty">
-						<div class="task--summary">
-							<p>Er is nog geen log op deze dag.</p>
-							
-						</div>
-					</div>
-				</div>
-				<div class="log--accept">
-					<small id="id2eb" hidden="" data-wicket-placeholder=""></small>  
-				</div>
-			</div>
-		
-			</div><div class="content--part" id="id2ec">
-				
-
-        <h2 class="is-header">
-        	<span>29 april</span> - <span>5 mei</span> 
-        	<span class="is-soft">/ Week <span>18</span> <span>2024</span></span>
-        </h2>
- 
-
-	        
-		<div class="tasks tasks-planning" id="id2ee">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span></span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p></p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Ik heb de snelle knoppen een functionaliteit proberen te geven waarbij je snel kan klikken om verlof, ziek of anders toe te voegen</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u30m</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Ik heb de snelle knoppen een functionaliteit proberen te geven waarbij je snel kan klikken om verlof, ziek of anders toe te voegen</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>gewerkt aan het ziekmelden en presentie overzicht</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>gewerkt aan het ziekmelden en presentie overzicht</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>gewerkt aan het ziekmelden en presentie overzicht</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>gewerkt aan het ziekmelden en presentie overzicht</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Problemen opgelost met het ophalen van data, queries en andere bugs</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Problemen opgelost met het ophalen van data, queries en andere bugs</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
+					<p>TVM</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
 						
 					</div>
 				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>TVM</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li><small>Let op: na het indienen kan je dit log niet meer bewerken.</small></li>
+							<li>
+								<a id="id33" href="#">
+									<i class="flaticon upload-1"></i>
+									Indienen
+								</a>
+							</li>
+							<li>
+								<a id="id34" href="#">
+									<i class="flaticon compose-3"></i>
+									Bewerken
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2ef">Laatst goedgekeurd op 21-05-2024 om 13:12 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 40u30m</small> 
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">di</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+						<small class="week-day--summary-meta">
+							<a class="js-toggle-popover-log" id="id35" href="#">
+								<i class="flaticon compose-2"></i>
+							</a>
+						</small>
+					
+				</div>
+			</div>
+		</div><div class="week-plan">
+			<span class="week-plan--title">wo</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div><div class="week-plan is-today">
+			<span class="week-plan--title">do</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div><div class="week-plan">
+			<span class="week-plan--title">vr</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Je kan nog geen log schrijven.</p>
+					
+				</div>
+			</div>
+		</div><div class="week-plan">
+			<span class="week-plan--title">za</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Je kan nog geen log schrijven.</p>
+					
+				</div>
+			</div>
+		</div><div class="week-plan">
+			<span class="week-plan--title">zo</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Je kan nog geen log schrijven.</p>
+					
+				</div>
 			</div>
 		</div>
-	
-		</div><div class="content--part" id="id2ed">
-	        
+		<div class="log--accept">
+			<small class="log--accept-message" id="id23"></small>
+			<small class="log--accept-total-hours">Totaal: 8u</small>
+			
+		</div>
+	</div>
 
-        <h2 class="is-header">
-        	<span>22 april</span> - <span>28 april</span> 
-        	<span class="is-soft">/ Week <span>17</span> <span>2024</span></span>
-        </h2>
- 
+		</div><div class="content--part" id="id24">
+	        
+	<div class="week-header">
+		<h2 class="is-header">
+			<span>24 maart</span> -
+			<span>30 maart</span>
+			<span class="is-soft">/ Week <span>13</span> </span>
+		</h2>
+	</div>
 
 	        
-		<div class="tasks tasks-planning" id="id2f0">
-			<div class="week-plan">
-				<span class="week-plan--title">ma</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag gewerkt in de MVC sandbox van degosoft.
-Ik ben vandaag bezig geweest met het leren van de CRUD in de omgeving van degosoft. Ook heb ik de werklaptop geinstalleerd met een email, bitbucket en andere applicaties die belangrijk zijn tot het programeren.</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u30m</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag gewerkt in de MVC sandbox van degosoft.
-Ik ben vandaag bezig geweest met het leren van de CRUD in de omgeving van degosoft. Ook heb ik de werklaptop geinstalleerd met een email, bitbucket en andere applicaties die belangrijk zijn tot het programeren.</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">di</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik modules gemaakt waar ik een medewerker kan registreren en zijn functie kan toevoegen. Ook kan je de functie los aanmaken met CRUD</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u30m</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik modules gemaakt waar ik een medewerker kan registreren en zijn functie kan toevoegen. Ook kan je de functie los aanmaken met CRUD</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">wo</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik de modules medewerkers en functie verder gemaakt en geleerd hoe ik deze aan elkaar kan koppelen in een overzicht</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u30m</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik de modules medewerkers en functie verder gemaakt en geleerd hoe ik deze aan elkaar kan koppelen in een overzicht</p>
-							<div class="popout--emotion">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">do</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Vandaag heb ik een ziekmeld module toegevoegd aan het programma</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u30m</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Vandaag heb ik een ziekmeld module toegevoegd aan het programma</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">vr</span>
-				<div class="task has-popout">
-					<div class="task--summary popout--toggle js-popout-toggle">
-						<p>
-							<span>Bij het hoofdscherm toegevoegd dat er meerdere snelle handeling&#039;s knoppen staan zonder functionaliteit</span>
-						</p>
-						<small class="task--summary-meta"> <span>8u30m</span>   
-						</small>
-						<div class="task--summary-status">
-							<span class="s5-tag-label s5-label--success">Akkoord</span>
-						</div>
-					</div>
-					<div class="popout">
-						<div class="popout--body popout--aside emoticon--wrapper">
-							<p>Bij het hoofdscherm toegevoegd dat er meerdere snelle handeling&#039;s knoppen staan zonder functionaliteit</p>
-							<div class="popout--emotion is-happy">
-								<i class="emoticon"></i>
-							</div>
-						</div>
-						<div class="popout--options">
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div><div class="week-plan">
-				<span class="week-plan--title">za</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
+	<div class="tasks tasks-planning week-planning" id="id1a">
+		<div class="week-plan">
+			<span class="week-plan--title">ma</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>TVM</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
 						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
 					</div>
 				</div>
-			</div><div class="week-plan">
-				<span class="week-plan--title">zo</span>
-				
-				<div class="task task--empty">
-					<div class="task--summary">
-						<p>Er is nog geen log op deze dag.</p>
-						
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>TVM</p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="log--accept">
-				<small class="log--accept-message" id="id2f1">Laatst goedgekeurd op 13-05-2024 om 10:41 door dhr. E.G.J. Steens</small> <small class="log--accept-total-hours">Totaal: 42u30m</small> 
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">di</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>gewerkt aan stage</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>gewerkt aan stage</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">wo</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div><div class="week-plan">
+			<span class="week-plan--title">do</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p></p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p></p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">vr</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>TVM</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>TVM</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">za</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div><div class="week-plan">
+			<span class="week-plan--title">zo</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
 			</div>
 		</div>
-	
+		<div class="log--accept">
+			<small class="log--accept-message" id="id25">Laatst goedgekeurd op 03-04 om 11:02 door dhr. E.G.J. Steens</small>
+			<small class="log--accept-total-hours">Totaal: 32u</small>
+			
 		</div>
-		<div id="id29f">
+	</div>
+
+		</div><div class="content--part" id="id26">
+	        
+	<div class="week-header">
+		<h2 class="is-header">
+			<span>17 maart</span> -
+			<span>23 maart</span>
+			<span class="is-soft">/ Week <span>12</span> </span>
+		</h2>
+	</div>
+
+	        
+	<div class="tasks tasks-planning week-planning" id="id1b">
+		<div class="week-plan">
+			<span class="week-plan--title">ma</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Vandaag heb ik ook weer met filters en queries bezig gehouden, een hotfix uitgevoerd en meegedaan aan een overleg bij de klant</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Vandaag heb ik ook weer met filters en queries bezig gehouden, een hotfix uitgevoerd en meegedaan aan een overleg bij de klant</p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">di</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Vandaag heb ik gewerkt aan de padlet, waarbij ik items zoals backend code, front end code, mockups, en wat database code heb verwerkt</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Vandaag heb ik gewerkt aan de padlet, waarbij ik items zoals backend code, front end code, mockups, en wat database code heb verwerkt</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">wo</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div><div class="week-plan">
+			<span class="week-plan--title">do</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p></p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p></p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">vr</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p></p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p></p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">za</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div><div class="week-plan">
+			<span class="week-plan--title">zo</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div>
+		<div class="log--accept">
+			<small class="log--accept-message" id="id27">Laatst goedgekeurd op 03-04 om 11:02 door dhr. E.G.J. Steens</small>
+			<small class="log--accept-total-hours">Totaal: 32u</small>
+			
+		</div>
+	</div>
+
+		</div><div class="content--part" id="id28">
+	        
+	<div class="week-header">
+		<h2 class="is-header">
+			<span>10 maart</span> -
+			<span>16 maart</span>
+			<span class="is-soft">/ Week <span>11</span> </span>
+		</h2>
+	</div>
+
+	        
+	<div class="tasks tasks-planning week-planning" id="id1c">
+		<div class="week-plan">
+			<span class="week-plan--title">ma</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Vandaag evaluatie gesprek over werkzaamheden en wat kleinere taken uit gerold</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Vandaag evaluatie gesprek over werkzaamheden en wat kleinere taken uit gerold</p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">di</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Vandaag heb ik gewerkt aan het verzamelen van alle losse documenten en dit zo goed mogelijk in een padlet gestopt</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Vandaag heb ik gewerkt aan het verzamelen van alle losse documenten en dit zo goed mogelijk in een padlet gestopt</p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">wo</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Vandaag thuis gewerkt met sticky notes alle taken verdeeld over een moscow principe met per moscow een prioriteiten schema(hoger de belangrijker het is)</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Vandaag thuis gewerkt met sticky notes alle taken verdeeld over een moscow principe met per moscow een prioriteiten schema(hoger de belangrijker het is)</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">do</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>De padlet verder aangevuld met bronnen, de MoSCoW in verwerkt en verder de moscow bewerkt wat er globaal de planning is</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>De padlet verder aangevuld met bronnen, de MoSCoW in verwerkt en verder de moscow bewerkt wat er globaal de planning is</p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">vr</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Ook vandaag voor de klant gewerkt, waarbij ik naast de extra velden gemaakt heb nog even met mede stagiares heb gezeten om te bekijken wat belangrijk is voor stage</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Ook vandaag voor de klant gewerkt, waarbij ik naast de extra velden gemaakt heb nog even met mede stagiares heb gezeten om te bekijken wat belangrijk is voor stage</p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">za</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div><div class="week-plan">
+			<span class="week-plan--title">zo</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div>
+		<div class="log--accept">
+			<small class="log--accept-message" id="id29">Laatst goedgekeurd op 26-03 om 9:15 door dhr. E.G.J. Steens</small>
+			<small class="log--accept-total-hours">Totaal: 40u</small>
+			
+		</div>
+	</div>
+
+		</div><div class="content--part" id="id2a">
+	        
+	<div class="week-header">
+		<h2 class="is-header">
+			<span>3 maart</span> -
+			<span>9 maart</span>
+			<span class="is-soft">/ Week <span>10</span> </span>
+		</h2>
+	</div>
+
+	        
+	<div class="tasks tasks-planning week-planning" id="id2d">
+		<div class="week-plan">
+			<span class="week-plan--title">ma</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>thuis gewerkt aan stage documentatie</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>thuis gewerkt aan stage documentatie</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">di</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>thuis gewerkt aan portofolio examen</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>thuis gewerkt aan portofolio examen</p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">wo</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>thuis gewerkt aan stage&amp; portofolio code</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>thuis gewerkt aan stage&amp; portofolio code</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">do</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Server ingericht portofolio/stage</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Server ingericht portofolio/stage</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">vr</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Padlet bijgewerkt stage</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Padlet bijgewerkt stage</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">za</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div><div class="week-plan">
+			<span class="week-plan--title">zo</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div>
+		<div class="log--accept">
+			<small class="log--accept-message" id="id2e">Laatst goedgekeurd op 18-03 om 11:31 door dhr. E.G.J. Steens</small>
+			<small class="log--accept-total-hours">Totaal: 40u</small>
+			
+		</div>
+	</div>
+
+		</div><div class="content--part" id="id2b">
+	        
+	<div class="week-header">
+		<h2 class="is-header">
+			<span>24 februari</span> -
+			<span>2 maart</span>
+			<span class="is-soft">/ Week <span>9</span> </span>
+		</h2>
+	</div>
+
+	        
+	<div class="tasks tasks-planning week-planning" id="id2f">
+		<div class="week-plan">
+			<span class="week-plan--title">ma</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Vandaag de controle functie afgerond en aan een extentie voor schade begonnen</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Vandaag de controle functie afgerond en aan een extentie voor schade begonnen</p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">di</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>gewerkt aan stage documentatie &amp; begin gemaakt aan de MVC model</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>gewerkt aan stage documentatie &amp; begin gemaakt aan de MVC model</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">wo</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Gewerkt aan portofolio examen en gereflecteerd op stage documentatie</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Gewerkt aan portofolio examen en gereflecteerd op stage documentatie</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">do</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Vandaag heb ik een eigen domein gekocht, met mailserver en database naast de gebruikelijke diensten die ik heb</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Vandaag heb ik een eigen domein gekocht, met mailserver en database naast de gebruikelijke diensten die ik heb</p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">vr</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Vandaag weer voor de klant TVM gewerkt, waarbij ik controle in data verkeer in orde maakte waarbij je een bestuurder en voertuig aan elkaar koppelt of niet</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Vandaag weer voor de klant TVM gewerkt, waarbij ik controle in data verkeer in orde maakte waarbij je een bestuurder en voertuig aan elkaar koppelt of niet</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">za</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div><div class="week-plan">
+			<span class="week-plan--title">zo</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div>
+		<div class="log--accept">
+			<small class="log--accept-message" id="id30">Laatst goedgekeurd op 18-03 om 11:32 door dhr. E.G.J. Steens</small>
+			<small class="log--accept-total-hours">Totaal: 40u</small>
+			
+		</div>
+	</div>
+
+		</div><div class="content--part" id="id2c">
+	        
+	<div class="week-header">
+		<h2 class="is-header">
+			<span>17 februari</span> -
+			<span>23 februari</span>
+			<span class="is-soft">/ Week <span>8</span> </span>
+		</h2>
+	</div>
+
+	        
+	<div class="tasks tasks-planning week-planning" id="id31">
+		<div class="week-plan">
+			<span class="week-plan--title">ma</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Vandaag gewerkt aan een paar todo punten zoals een fout opgelost in mijn eigen code, een todo punt afgerond en gestart aan het controleren van gegevens als achtergrond process</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Vandaag gewerkt aan een paar todo punten zoals een fout opgelost in mijn eigen code, een todo punt afgerond en gestart aan het controleren van gegevens als achtergrond process</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">di</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Gewerkt aan stage documentatie mockup portofolio</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Gewerkt aan stage documentatie mockup portofolio</p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">wo</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Uitleg gekregen over portofolio examen en gewerkt aan stage documentatie</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Uitleg gekregen over portofolio examen en gewerkt aan stage documentatie</p>
+						<div class="popout--emotion">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">do</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Vandaag de aandachtpunten van portofolio examen doorgenomen en overlegd met mede stagiaires wat te doen</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Vandaag de aandachtpunten van portofolio examen doorgenomen en overlegd met mede stagiaires wat te doen</p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">vr</span>
+			<div class="task week-plan-day has-popout">
+				<div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+					
+					<p>Vandaag gewerkt aan controle functie maken bij tvm</p>
+					<small class="task--summary-meta week-day--summary-meta">
+						<span class="aanwezig">8u</span>
+						
+						
+						
+					</small>
+					<div class="week-day--summary-status">
+						<span class="label--default s5-label--success">Akkoord</span>
+					</div>
+				</div>
+				<div class="popout">
+					<div class="popout--body popout--aside emoticon--wrapper has-color">
+						<p>Vandaag gewerkt aan controle functie maken bij tvm</p>
+						<div class="popout--emotion is-happy">
+							<i class="emoticon"></i>
+						</div>
+					</div>
+					<div class="popout--options">
+						<ul>
+							<li></li>
+							<li>
+								
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div><div class="week-plan">
+			<span class="week-plan--title">za</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div><div class="week-plan">
+			<span class="week-plan--title">zo</span>
+			
+			<div class="task task--empty week-plan-day day--empty">
+				<div class="task--summary week-day">
+					<p>Er is nog geen log op deze dag.</p>
+					
+				</div>
+			</div>
+		</div>
+		<div class="log--accept">
+			<small class="log--accept-message" id="id32">Laatst goedgekeurd op 18-03 om 11:32 door dhr. E.G.J. Steens</small>
+			<small class="log--accept-total-hours">Totaal: 40u</small>
+			
+		</div>
+	</div>
+
+		</div>
+		<div id="id1d">
 	
 </div>
 		
+	
+	</div>
+	<div class="content">
+		
+	</div>	
+	
+
+			</section>
+		</div>
+	</div>
+</body>
+</html>

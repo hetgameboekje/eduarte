@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week Log JSON Generator</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>Logboek Generator</h1>
+
+    <div class="week-header">
+        <h2 class="is-header">
+            <span>17 februari</span> - <span>23 februari</span>
+            <span class="is-soft">/ Week <span>8</span> </span>
+        </h2>
+    </div>
+
+    <div class="tasks tasks-planning week-planning" id="id31">
+        <div class="week-plan">
+            <span class="week-plan--title">ma</span>
+            <div class="task week-plan-day has-popout">
+                <div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+                    <p>Vandaag gewerkt aan een paar todo punten...</p>
+                    <small class="task--summary-meta week-day--summary-meta">
+                        <span class="aanwezig">8u</span>
+                    </small>
+                </div>
+            </div>
+        </div>
+        <!-- Andere dagen volgen hier... -->
+    </div>
+
+    <button id="generateJson">Genereer JSON</button>
+
+    <script>
+        document.getElementById('generateJson').onclick = function() {
+            const weekStartDate = new Date('2025-02-17'); // startdatum van de week
+            const daysOfWeek = ['ma', 'di', 'wo', 'do', 'vr', 'za', 'zo']; // dagen van de week
+            const activities = [
+                "Vandaag gewerkt aan een paar todo punten...",
+                "Vandaag gewerkt aan de padlet...",
+                "Er is nog geen log op deze dag.",
+                "Er is nog geen log op deze dag.",
+                "Je kan nog geen log schrijven.",
+                "Je kan nog geen log schrijven.",
+                "Je kan nog geen log schrijven."
+            ]; // voorbeeld van activiteiten per dag (dit moet je aanpassen aan de werkelijke inhoud)
+
+            const jsonData = [];
+            let currentDate = new Date(weekStartDate); // Begin met de startdatum
+
+            // Itereer door de dagen van de week
+            daysOfWeek.forEach((day, index) => {
+                // Voeg het JSON-object toe met de juiste datum
+                jsonData.push({
+                    "weekday": day,
+                    "date": `${currentDate.getDate()}-${currentDate.getMonth() + 1}-${currentDate.getFullYear()}`,
+                    "activity": activities[index],
+                    "time": "8u" // Je kunt hier de werkelijke tijd invoeren of een ander gegeven
+                });
+
+                // Verhoog de datum met 1 dag voor de volgende iteratie
+                currentDate.setDate(currentDate.getDate() + 1);
+            });
+
+            console.log(JSON.stringify(jsonData, null, 2)); // Toon de JSON in de console
+            alert("JSON is gegenereerd, kijk in de console!");
+        }
+    </script>
+</body>
+</html>

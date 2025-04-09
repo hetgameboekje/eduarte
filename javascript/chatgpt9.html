@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML naar JSON Parser</title>
+</head>
+<body>
+    <h1>HTML naar JSON Parser</h1>
+    
+    <div class="tasks tasks-planning week-planning" id="id1a">
+        <div class="week-plan">
+            <span class="week-plan--title">ma</span>
+            <div class="task week-plan-day has-popout">
+                <div class="task--summary week-day popout--toggle js-popout-toggle emoticon--wrapper has-color">
+                    <p>TVM</p>
+                    <small class="task--summary-meta week-day--summary-meta">
+                        <span class="aanwezig">8u</span>
+                    </small>
+                    <div class="week-day--comment">Dit is een testopmerking.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="parseHTML()">Convert to JSON</button>
+    <pre id="output"></pre>
+
+    <script>
+        function parseHTML() {
+            let data = [];
+
+            // Zoek alle dagen
+            document.querySelectorAll(".week-plan").forEach(plan => {
+                let day = plan.querySelector(".week-plan--title")?.innerText.trim();
+                
+                plan.querySelectorAll(".task.week-plan-day").forEach(task => {
+                    let activity = task.querySelector("p")?.innerText.trim();
+                    let time = task.querySelector(".aanwezig")?.innerText.trim();
+                    let comment = task.querySelector(".week-day--comment")?.innerText.trim();
+
+                    if (day && activity && time) {
+                        data.push({
+                            "dag": day,
+                            "activiteit": activity,
+                            "tijd": time,
+                            "opmerking": comment || null
+                        });
+                    }
+                });
+            });
+
+            // Zet om naar JSON en toon het
+            document.getElementById("output").innerText = JSON.stringify(data, null, 4);
+        }
+    </script>
+</body>
+</html>

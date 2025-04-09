@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML naar JSON Parser</title>
+</head>
+<body>
+    <h1>HTML naar JSON Parser</h1>
+    
+    <textarea id="htmlInput" rows="10" cols="50">
+        <!-- Plak hier jouw HTML -->
+    </textarea>
+    
+    <button onclick="parseAndPost()">Convert & Send</button>
+    <pre id="output"></pre>
+
+    <script>
+        function parseAndPost() {
+            const inputHTML = document.getElementById("htmlInput").value;
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(inputHTML, "text/html");
+
+            // Check of er een parserfout is opgetreden
+            if (doc.querySelector("parsererror")) {
+                document.getElementById("output").textContent = "Fout: Ongeldige HTML ingevoerd.";
+                return;
+            }
+
+            let databaseRows = [];
+
+            // Zoek naar logs in divs (pas dit eventueel aan op basis van je HTML-structuur)
+            const logContainers = doc.querySelectorAll("body > div");
+
+            logContainers.forEach(container => {
+                const logText = container.textContent.trim();
+                
+                // Regex voor uren en minuten (bijv. "8u30m", "45m", "2u")
+                const timeMatch = logText.match(/(?:(\d+)u)?\s*(?:(\d+)m)?/);
+                if (timeMatch) {
+                    const hours = timeMatch[1] ? parseInt(timeMatch[1], 10) : 0;
+                    const minutes = timeMatch[2] ? parseInt(timeMatch[2], 10) : 0;
+                    const durationInSeconds = (hours * 3600) + (minutes * 60);
+
+                    if (durationInSeconds > 0) {
+                        databaseRows.push({
+                            log: logText.replace(/(\d+u)?\s*(\d+m)?/, "").trim(),
+                            duration_seconds: durationInSeconds
+                        });
+                    }
+                }
+            });
+
+            if (databaseRows.length > 0) {
+                sendToServer(databaseRows);
+            } else {
+                document.getElementById("output").textContent = "Geen relevante data om te verzenden.";
+            }
+        }
+
+        function sendToServer(data) {
+            fetch("server_endpoint.php", {  // Pas dit aan naar je echte API-endpoint
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                document.getElementById("output").textContent = "Server Response: " + JSON.stringify(result, null, 4);
+            })
+            .catch(error => {
+                document.getElementById("output").textContent = "Fout bij verzenden: " + error;
+            });
+        }
+    </script>
+</body>
+</html>

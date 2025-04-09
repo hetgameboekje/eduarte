@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML naar JSON Converter</title>
+</head>
+<body>
+    <h1>HTML naar JSON Converter</h1>
+
+    <!-- Input voor HTML code -->
+    <textarea id="htmlInput" rows="10" cols="50"></textarea>
+    
+    <button onclick="parseAndConvert()">Converteren</button>
+    
+    <pre id="output"></pre>
+
+    <script>
+        function parseAndConvert() {
+            const inputHTML = document.getElementById("htmlInput").value;
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(inputHTML, "text/html");
+
+            // Definieer de dagen van de week
+            const daysOfWeek = ['ma', 'di', 'wo', 'do', 'vr', 'za', 'zo'];
+            let jsonData = [];
+
+            // Zoek naar de weekplannen in de HTML
+            const weekPlans = doc.querySelectorAll('.week-plan');
+
+            weekPlans.forEach((weekPlan, index) => {
+                const dayTitle = weekPlan.querySelector('.week-plan--title').textContent.trim();
+                const tasks = weekPlan.querySelectorAll('.task');
+
+                tasks.forEach(task => {
+                    const activity = task.querySelector('p') ? task.querySelector('p').textContent.trim() : '';
+                    const time = task.querySelector('.aanwezig') ? task.querySelector('.aanwezig').textContent.trim() : '';
+
+                    // Als er geen activiteit of tijd is, sla de task over
+                    if (activity || time) {
+                        jsonData.push({
+                            date: daysOfWeek[index],  // Vul de juiste dag in
+                            activity: activity,
+                            time: time
+                        });
+                    }
+                });
+            });
+
+            // Toon de JSON output
+            document.getElementById("output").textContent = JSON.stringify(jsonData, null, 4);
+        }
+    </script>
+</body>
+</html>

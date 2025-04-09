@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML naar JSON Parser</title>
+</head>
+<body>
+    <h1>HTML naar JSON Parser</h1>
+    
+    <textarea id="htmlInput" rows="10" cols="50">
+        <!-- Plak hier jouw HTML -->
+    </textarea>
+    
+    <button onclick="parseAndPost()">Convert & Send</button>
+    <pre id="output"></pre>
+
+    <script>
+        function parseAndPost() {
+            const inputHTML = document.getElementById("htmlInput").value;
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(inputHTML, "text/html");
+
+            let result = [];
+
+            // Haal de week datums op
+            const weekHeader = doc.querySelector(".week-header h2 span:nth-child(1)").textContent.trim();
+            const weekDates = weekHeader.split(" - ");
+            const startDate = weekDates[0]; // Begin datum, zoals "17 februari"
+            const endDate = weekDates[1];   // Eind datum, zoals "23 februari"
+
+            // Haal de activiteiten per dag op
+            const days = ['ma', 'di', 'wo', 'do', 'vr', 'za', 'zo'];
+            let currentDate = startDate;
+
+            days.forEach((day, index) => {
+                const activityElement = doc.querySelector(`.week-plan .week-plan--title:contains("${day}")`);
+                const activityText = activityElement ? activityElement.nextElementSibling.querySelector("p")?.textContent.trim() : 'Geen activiteit';
+                const timeText = activityElement ? activityElement.nextElementSibling.querySelector(".aanwezig")?.textContent.trim() : '';
+
+                // Als er geen activiteit is, stel deze in als "Geen log"
+                const activity = activityText || "Er is nog geen log op deze dag.";
+                const time = timeText || "";
+
+                // Voeg de activiteit aan de resultaten toe
+                result.push({
+                    "weekday": day,
+                    "date": currentDate,
+                    "activity": activity,
+                    "time": time
+                });
+
+                // Verhoog de datum voor de volgende dag
+                currentDate = getNextDate(currentDate);
+            });
+
+            // Toon de JSON output
+            document.getElementById("output").textContent = JSON.stringify(result, null, 4);
+        }
+
+        function getNextDate(currentDate) {
+            // Dit is een simpele manier om de datum te verhogen (we gaan er van uit dat de input een Nederlandse datum is)
+            const dateParts = currentDate.split(" ");
+            const day = parseInt(dateParts[0], 10);
+            const month = dateParts[1];
+
+            const months = {
+                januari: 1, februari: 2, maart: 3, april: 4, mei: 5, juni: 6, juli: 7,
+                augustus: 8, september: 9, oktober: 10, november: 11, december: 12
+            };
+
+            const nextDay = new Date(2025, months[month] - 1, day + 1);
+            const newDay = nextDay.getDate();
+            const newMonth = Object.keys(months)[nextDay.getMonth()];
+            return `${newDay} ${newMonth}`;
+        }
+    </script>
+</body>
+</html>

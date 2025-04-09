@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML naar JSON Parser</title>
+</head>
+<body>
+    <h1>HTML naar JSON Parser</h1>
+    
+    <textarea id="htmlInput" rows="10" cols="50">
+        <!-- Plak hier jouw HTML -->
+    </textarea>
+    
+    <button onclick="parseAndPost()">Convert & Send</button>
+    <pre id="output"></pre>
+
+    <script>
+        function parseAndPost() {
+            const inputHTML = document.getElementById("htmlInput").value;
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(inputHTML, "text/html");
+
+            const days = ["ma", "di", "wo", "do", "vr", "za", "zo"];
+            let weekData = [];
+
+            days.forEach((day, index) => {
+                const dayElement = doc.querySelector(`.week-plan:nth-of-type(${index + 1})`);
+                const activityElement = dayElement.querySelector('.task--summary p');
+                const timeElement = dayElement.querySelector('.aanwezig');
+                
+                const activity = activityElement ? activityElement.textContent.trim() : "Er is nog geen log op deze dag.";
+                const time = timeElement ? timeElement.textContent.trim() : "";
+
+                // Voeg de gegevens toe aan de weekData array
+                weekData.push({
+                    weekday: day,
+                    date: `17-02-2025`, // Dynamisch toevoegen op basis van jouw wensen
+                    activity: activity,
+                    time: time
+                });
+            });
+
+            // Toon de JSON-output
+            document.getElementById("output").textContent = JSON.stringify(weekData, null, 4);
+        }
+    </script>
+</body>
+</html>
